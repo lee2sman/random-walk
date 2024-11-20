@@ -43,14 +43,18 @@ ol,
 ul {
 	list-style: none;
 }
-
 img {
-	max-width: 100%;
+	width: 300px;
 	height: auto;
+	max-width: 100%;
 }
 /* ------ END CSS RESET ------- */
 
 /* ------ MAIN / GALLERY ------ */
+#robot {
+      width: 100px;
+      height: 100px;
+}
 html {
 	background-color: aliceblue;
 	color: darkblue;
@@ -81,7 +85,14 @@ div {
 	margin: 0.3em;
 }
 li {
-	margin: 2em 2em 0 0;
+	margin: 2rem 2rem 5rem 0;
+}
+em {
+	display: block;
+	margin: 0.4rem 0 0.3rem 0;
+}
+li > img {
+	margin: 1rem 0 1rem 0;
 }
 li > span {
 	font-size: 4em;
