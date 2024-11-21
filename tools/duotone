@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# check for imagemagick first
+if ! command -v magick 2>&1 >/dev/null
+then
+    echo "imagemagick could not be found, required."
+    exit 1
+fi
+
+# help 
+if [ $1 = "--help" ]; then
+  echo "Usage: duotone INPUTFILE OUTPUTFILE"
+  exit 0
+elif [ $1 = "-h" ]; then
+  echo "Usage: duotone INPUTFILE OUTPUTFILE"
+  exit 0 
+fi
+
+if [ "$#" -ne 2 ]; then
+  echo "Not enough arguments"
+  echo "Usage: duotone INPUTFILE OUTPUTFILE"
+else
+  magick $1 -grayscale average -resize 300x clut.gif -interpolate bilinear -clut $2 
+fi
+
+
